@@ -24,6 +24,7 @@ namespace GroceryStore
         {
             password_textbox.PasswordChar = '*';
             Global.con = new SqlConnection(Global.stringConectare);
+            
         }
 
         private void Login_Button_Click(object sender, EventArgs e)
@@ -94,12 +95,12 @@ namespace GroceryStore
             object obj = cmd.ExecuteScalar(); 
             if(Convert.ToInt32(obj)>0)
             {
-                MessageBox.Show("An user with the same name already exists");
+                MessageBox.Show("An user with the same name already exists"); 
                 return;
             }
 
             string insert = "insert into account values ('" + username + "','" + password + "',0)";
-            MessageBox.Show(insert);
+           
             cmd = new SqlCommand(insert, Global.con);
             cmd.ExecuteNonQuery();
             Global.con.Close();

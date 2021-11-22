@@ -16,5 +16,10 @@ namespace GroceryStore
         {
             InitializeComponent();
         }
+
+        private void MenuAdmin_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
