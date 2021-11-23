@@ -15,9 +15,12 @@ namespace GroceryStore
 {
     public partial class login : Form
     {
+        internal static login form;
+        
         public login()
         {
             InitializeComponent();
+            form = this;
         }
 
         private void login_Load(object sender, EventArgs e)
@@ -26,6 +29,46 @@ namespace GroceryStore
             Global.con = new SqlConnection(Global.stringConectare);
             
         }
+
+        private Form activeForm = null;
+
+        private void openChildForm(Form childForm) //Open a form in a form
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel_Login.Controls.Add(childForm);
+            panel_Login.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void HideEverything() //Hide everything for openChildForm()
+        {
+            label_Password.Visible = false;
+            label_Username.Visible = false;
+            password_textbox.Visible = false; 
+            username_textbox.Visible = false; 
+            Login_Button.Visible = false;
+            Register_Button.Visible = false;
+            pictureBox.Visible = false;
+        }
+
+        public void ShowEverything() //Show everything when closing form from openChildForm()
+        {
+            label_Password.Visible = true;
+            label_Username.Visible = true;
+            password_textbox.Visible = true;
+            username_textbox.Visible = true;
+            Login_Button.Visible = true;
+            Register_Button.Visible = true;
+            pictureBox.Visible = true;
+        }
+
+        #region "Register and Login functions"
 
         private void Login_Button_Click(object sender, EventArgs e)
         {
@@ -57,18 +100,15 @@ namespace GroceryStore
             {
                 int type = int.Parse(Global.ds.Tables[0].Rows[0]["atype"].ToString());
                 if(type==1) //verify admin account
-                {
-                    this.Hide();
-                    MenuAdmin menuAdmin = new MenuAdmin(); 
-                    menuAdmin.ShowDialog();
-                    
+                {   
+                    HideEverything();
+                    openChildForm(new MenuAdmin());
                 }
                 else 
                     if(type==0) //verify normal user account
                 {
-                    this.Hide();
-                    MenuUser menuuser = new MenuUser(); 
-                    menuuser.ShowDialog();
+                    HideEverything();
+                    openChildForm(new MenuUser());
                 }
             }
 
@@ -91,19 +131,26 @@ namespace GroceryStore
             string username = username_textbox.Text, password = password_textbox.Text;
             string sql = "select count(*) from account where username = '" + username + "' ";
             Global.con.Open();
-            SqlCommand cmd = new SqlCommand(sql,Global.con); 
+            SqlCommand cmd = new SqlCommand(sql,Global.con);   //Verify if the username already exists
             object obj = cmd.ExecuteScalar(); 
             if(Convert.ToInt32(obj)>0)
             {
                 MessageBox.Show("An user with the same name already exists"); 
+                Global.con.Close();
                 return;
             }
 
-            string insert = "insert into account values ('" + username + "','" + password + "',0)";
+            string insert = "insert into account values ('" + username + "','" + password + "',0)"; //If not then add him 
            
             cmd = new SqlCommand(insert, Global.con);
             cmd.ExecuteNonQuery();
             Global.con.Close();
         }
+
+
+        #endregion  
+
+
+
     }
 }

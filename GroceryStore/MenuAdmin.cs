@@ -21,5 +21,32 @@ namespace GroceryStore
         {
             
         }
+
+        private Form activeForm = null;
+
+        private void openChildForm(Form childForm) //Open a form in a form
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            Panel_ShowMenus.Controls.Add(childForm);
+            Panel_ShowMenus.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void button_LogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            login.form.ShowEverything();
+        }
+
+        private void button_Products_Click(object sender, EventArgs e)
+        {
+            openChildForm(new products());
+        }
     }
 }
