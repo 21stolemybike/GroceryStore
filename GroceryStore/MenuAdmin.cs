@@ -15,6 +15,7 @@ namespace GroceryStore
         public MenuAdmin()
         {
             InitializeComponent();
+            
         }
 
         private void MenuAdmin_Load(object sender, EventArgs e)
@@ -38,6 +39,8 @@ namespace GroceryStore
             childForm.Show();
         }
 
+        #region "Menu Manage" 
+
         private void button_LogOut_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -48,5 +51,19 @@ namespace GroceryStore
         {
             openChildForm(new products());
         }
+
+        private void button_Order_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Order());
+        }
+
+        private void button_Manage_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ManageAccount());
+        }
+
+        #endregion 
+
+
     }
 }

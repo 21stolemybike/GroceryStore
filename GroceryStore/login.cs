@@ -108,12 +108,13 @@ namespace GroceryStore
                     if(type==0) //verify normal user account
                 {
                     HideEverything();
-                    openChildForm(new MenuUser());
+                    openChildForm(new MenuAdmin()); //Trebuie schimbat inapoi cand ajung la partea asta si sters comentariu
                 }
             }
-
-
+            
+            Global.CurrentUsername = username;
             Global.con.Close();
+            
         }
 
         private void Register_Button_Click(object sender, EventArgs e)

@@ -15,6 +15,7 @@ namespace GroceryStore
         public static SqlDataAdapter da;
         public static DataSet ds;
         public static SqlCommandBuilder cb;
+        public static string CurrentUsername;
     }
     
     
@@ -28,7 +29,7 @@ namespace GroceryStore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuAdmin());
+            Application.Run(new login());
         }
     }
 }

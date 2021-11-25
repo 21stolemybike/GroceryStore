@@ -63,9 +63,9 @@ namespace GroceryStore.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap loginlogo {
+        internal static System.Drawing.Bitmap blurred_supermarket_background {
             get {
-                object obj = ResourceManager.GetObject("loginlogo", resourceCulture);
+                object obj = ResourceManager.GetObject("blurred_supermarket_background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,19 @@ namespace GroceryStore.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap productsimage {
+        internal static System.Drawing.Bitmap icon_manage {
             get {
-                object obj = ResourceManager.GetObject("productsimage", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_manage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loginlogo {
+            get {
+                object obj = ResourceManager.GetObject("loginlogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
