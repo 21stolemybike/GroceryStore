@@ -51,7 +51,7 @@
             this.Panel_Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Panel_Menu.Location = new System.Drawing.Point(0, 0);
             this.Panel_Menu.Name = "Panel_Menu";
-            this.Panel_Menu.Size = new System.Drawing.Size(322, 616);
+            this.Panel_Menu.Size = new System.Drawing.Size(322, 748);
             this.Panel_Menu.TabIndex = 0;
             // 
             // button_AboutUs
@@ -61,7 +61,7 @@
             this.button_AboutUs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_AboutUs.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_AboutUs.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button_AboutUs.Location = new System.Drawing.Point(0, 581);
+            this.button_AboutUs.Location = new System.Drawing.Point(0, 713);
             this.button_AboutUs.Name = "button_AboutUs";
             this.button_AboutUs.Size = new System.Drawing.Size(322, 35);
             this.button_AboutUs.TabIndex = 5;
@@ -75,7 +75,7 @@
             this.button_LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_LogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_LogOut.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button_LogOut.Location = new System.Drawing.Point(3, 343);
+            this.button_LogOut.Location = new System.Drawing.Point(3, 409);
             this.button_LogOut.Name = "button_LogOut";
             this.button_LogOut.Size = new System.Drawing.Size(313, 35);
             this.button_LogOut.TabIndex = 4;
@@ -90,7 +90,7 @@
             this.button_Manage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Manage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Manage.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button_Manage.Location = new System.Drawing.Point(3, 302);
+            this.button_Manage.Location = new System.Drawing.Point(3, 368);
             this.button_Manage.Name = "button_Manage";
             this.button_Manage.Size = new System.Drawing.Size(313, 35);
             this.button_Manage.TabIndex = 3;
@@ -105,7 +105,7 @@
             this.button_Reports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Reports.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Reports.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button_Reports.Location = new System.Drawing.Point(0, 261);
+            this.button_Reports.Location = new System.Drawing.Point(0, 327);
             this.button_Reports.Name = "button_Reports";
             this.button_Reports.Size = new System.Drawing.Size(313, 35);
             this.button_Reports.TabIndex = 2;
@@ -119,7 +119,7 @@
             this.button_Order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Order.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Order.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button_Order.Location = new System.Drawing.Point(3, 220);
+            this.button_Order.Location = new System.Drawing.Point(3, 286);
             this.button_Order.Name = "button_Order";
             this.button_Order.Size = new System.Drawing.Size(313, 35);
             this.button_Order.TabIndex = 1;
@@ -134,7 +134,7 @@
             this.button_Products.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Products.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Products.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button_Products.Location = new System.Drawing.Point(0, 179);
+            this.button_Products.Location = new System.Drawing.Point(0, 245);
             this.button_Products.Name = "button_Products";
             this.button_Products.Size = new System.Drawing.Size(313, 35);
             this.button_Products.TabIndex = 0;
@@ -148,16 +148,17 @@
             this.Panel_ShowMenus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_ShowMenus.Location = new System.Drawing.Point(322, 0);
             this.Panel_ShowMenus.Name = "Panel_ShowMenus";
-            this.Panel_ShowMenus.Size = new System.Drawing.Size(995, 616);
+            this.Panel_ShowMenus.Size = new System.Drawing.Size(1256, 748);
             this.Panel_ShowMenus.TabIndex = 0;
             // 
             // MenuAdmin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1317, 616);
+            this.ClientSize = new System.Drawing.Size(1578, 748);
             this.Controls.Add(this.Panel_ShowMenus);
             this.Controls.Add(this.Panel_Menu);
+            this.MinimumSize = new System.Drawing.Size(1475, 705);
             this.Name = "MenuAdmin";
             this.Text = "AdminGroceryStore";
             this.Load += new System.EventHandler(this.MenuAdmin_Load);

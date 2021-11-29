@@ -18,6 +18,10 @@ stock int
 
 select * from products
 
+delete from products where id = 2 
+
+
+
 
 
 select *from account

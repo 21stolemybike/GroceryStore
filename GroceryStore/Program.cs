@@ -16,6 +16,7 @@ namespace GroceryStore
         public static DataSet ds;
         public static SqlCommandBuilder cb;
         public static string CurrentUsername;
+        public static int nr=0;
     }
     
     
