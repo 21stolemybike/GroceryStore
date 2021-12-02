@@ -41,23 +41,23 @@ namespace GroceryStore
 
         #region "Menu Manage" 
 
-        private void button_LogOut_Click(object sender, EventArgs e)
+        private void button_LogOut_Click(object sender, EventArgs e) //Log out
         {
             this.Close();
             login.form.ShowEverything();
         }
 
-        private void button_Products_Click(object sender, EventArgs e)
+        private void button_Products_Click(object sender, EventArgs e) //Open products form
         {
             openChildForm(new products());
         }
 
-        private void button_Order_Click(object sender, EventArgs e)
+        private void button_Order_Click(object sender, EventArgs e) //Open orders form
         {
             openChildForm(new Order());
         }
 
-        private void button_Manage_Click(object sender, EventArgs e)
+        private void button_Manage_Click(object sender, EventArgs e) //Open manage account form
         {
             openChildForm(new ManageAccount());
         }

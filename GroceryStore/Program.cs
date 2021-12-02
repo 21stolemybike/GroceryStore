@@ -15,8 +15,15 @@ namespace GroceryStore
         public static SqlDataAdapter da;
         public static DataSet ds;
         public static SqlCommandBuilder cb;
+
+        public static string CurrentId;
         public static string CurrentUsername;
+        public static string CurrentMobile;
+        public static string CurrentFullName; 
         public static int nr=0;
+
+        public static double totalValue=0;
+        public static List<int> orders = new List<int>();
     }
     
     

@@ -68,7 +68,7 @@ namespace GroceryStore
             pictureBox.Visible = true;
         }
 
-        #region "Register and Login functions"
+       #region "Register and Login functions"
 
         private void Login_Button_Click(object sender, EventArgs e)
         {
@@ -84,7 +84,7 @@ namespace GroceryStore
             }
 
             string username = username_textbox.Text, password = password_textbox.Text;
-            string sql = "SELECT username,pass,atype FROM account WHERE username like '" + username+"' and pass like '" + password +"'  ";
+            string sql = "SELECT id,username,pass,atype,fullName,mobile FROM account WHERE username like '" + username+"' and pass like '" + password +"'  ";
             
             Global.con.Open();
             Global.da = new SqlDataAdapter(sql, Global.con);
@@ -94,7 +94,7 @@ namespace GroceryStore
            //Verify if the user exist in the database
             if(Global.ds.Tables.Count == 0 || Global.ds == null || Global.ds.Tables[0].Rows.Count==0) 
             {
-                MessageBox.Show("Password or username incorrect!");
+                MessageBox.Show("Password or username incorrect!"); Global.con.Close();return;
             }
             else //if yes
             {
@@ -113,6 +113,11 @@ namespace GroceryStore
             }
             
             Global.CurrentUsername = username;
+            Global.CurrentId = Global.ds.Tables[0].Rows[0]["id"].ToString();
+            Global.CurrentFullName = Global.ds.Tables[0].Rows[0]["fullName"].ToString();
+            Global.CurrentMobile = Global.ds.Tables[0].Rows[0]["mobile"].ToString();
+            
+            
             Global.con.Close();
             
         }
@@ -141,7 +146,7 @@ namespace GroceryStore
                 return;
             }
 
-            string insert = "insert into account values ('" + username + "','" + password + "',0)"; //If not then add him 
+            string insert = "insert into account (username,pass,atype) values ('" + username + "','" + password + "',0)"; //If not then add him 
            
             cmd = new SqlCommand(insert, Global.con);
             cmd.ExecuteNonQuery();

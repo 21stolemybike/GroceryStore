@@ -34,7 +34,7 @@ namespace GroceryStore
 
         private void ProductsGridViewRefresh() //Refresh datagridview
         {
-            string sql = "select * from products";
+            string sql = "select id as 'ID', product_name as 'Product Name', product_weight as 'Product Weight', product_origin as 'Product Origin', manufacture_date as 'Manufacture Date', expiration_date as 'Expiration Date', stock as 'Stock', price as 'Price' from products";
             Global.con.Open();
             Global.da = new SqlDataAdapter(sql, Global.con);
             Global.ds = new DataSet();
@@ -43,7 +43,14 @@ namespace GroceryStore
             Global.con.Close();
         }
 
-
+        private void RemoveErrors () //Remove error text from labels 
+        {
+            label_NameError.Text = "";
+            label_WeightError.Text = "";
+            label_CountryError.Text = "";
+            label_StockError.Text = "";
+            label_PriceError.Text = "";
+        }
 
         private void button_Add_Click(object sender, EventArgs e) //Add a product to the database
         {
@@ -88,10 +95,23 @@ namespace GroceryStore
             else
                 label_StockError.Text = "";
 
+
+            if (string.IsNullOrEmpty(textBox_Price.Text))
+            {
+                label_PriceError.Text = "This field cannot be empty!"; nr++;
+            }
+            else
+           if (double.TryParse(textBox_Price.Text, out _) == false)
+            {
+                label_PriceError.Text = "Weight needs to be a number!"; nr++;
+            }
+            else
+                label_PriceError.Text = "";
+
             if (nr > 0)
                 return;
 
-            string sql = "insert into products values ('" + textBox_ProductName.Text + "','" + textBox_Weight.Text + "','" + textBox_Origin.Text + "','" + dateTimePicker_Manufacture.Text + "','" + dateTimePicker_Expiration.Text + "','" + textBox_stock.Text + "') ";
+            string sql = "insert into products values ('" + textBox_ProductName.Text + "','" + textBox_Weight.Text + "','" + textBox_Origin.Text + "','" + dateTimePicker_Manufacture.Text + "','" + dateTimePicker_Expiration.Text + "','" + textBox_stock.Text + "','"+double.Parse(textBox_Price.Text)+"') ";
             Global.con.Open();
             SqlCommand cmd = new SqlCommand(sql,Global.con);
             cmd.ExecuteNonQuery();
@@ -101,15 +121,17 @@ namespace GroceryStore
 
         private void dataGridView_Products_CellClick(object sender, DataGridViewCellEventArgs e) //Fill textbox - cell click
         {
+            RemoveErrors();
             int selectedrowindex = dataGridView_Products.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = dataGridView_Products.Rows[selectedrowindex];
             
-            textBox_ProductName.Text = Convert.ToString(selectedRow.Cells["product_name"].Value);
-            textBox_Weight.Text = Convert.ToString(selectedRow.Cells["product_weight"].Value);
-            textBox_Origin.Text = Convert.ToString(selectedRow.Cells["product_origin"].Value);
-            textBox_stock.Text = Convert.ToString(selectedRow.Cells["stock"].Value);
-            dateTimePicker_Manufacture.Text = Convert.ToString(selectedRow.Cells["manufacture_date"].Value);
-            dateTimePicker_Expiration.Text = Convert.ToString(selectedRow.Cells["expiration_date"].Value);
+            textBox_ProductName.Text = Convert.ToString(selectedRow.Cells["Product Name"].Value);
+            textBox_Weight.Text = Convert.ToString(selectedRow.Cells["Product Weight"].Value);
+            textBox_Origin.Text = Convert.ToString(selectedRow.Cells["Product Origin"].Value);
+            textBox_stock.Text = Convert.ToString(selectedRow.Cells["Stock"].Value);
+            dateTimePicker_Manufacture.Text = Convert.ToString(selectedRow.Cells["Manufacture Date"].Value);
+            dateTimePicker_Expiration.Text = Convert.ToString(selectedRow.Cells["Expiration Date"].Value);
+            textBox_Price.Text = Convert.ToString(selectedRow.Cells["Price"].Value);
             Global.nr = 1;
         }
 
@@ -119,6 +141,7 @@ namespace GroceryStore
             textBox_Weight.Clear();
             textBox_Origin.Clear();
             textBox_stock.Clear();
+            textBox_Price.Clear();
             Global.nr = 0;
         }
 
@@ -138,6 +161,7 @@ namespace GroceryStore
             textBox_Weight.Clear();
             textBox_Origin.Clear();
             textBox_stock.Clear();
+            textBox_Price.Clear();
         } //Delete product
 
         private void button_Update_Click(object sender, EventArgs e)
@@ -151,14 +175,18 @@ namespace GroceryStore
 
             string sql = "update products set product_name ='"+textBox_ProductName.Text+"', product_weight ='" + textBox_Weight.Text +
                 "', product_origin ='"+ textBox_Origin.Text +"' , manufacture_date ='"+ dateTimePicker_Manufacture.Text+ 
-                "', expiration_date ='"+ dateTimePicker_Expiration.Text+"', stock = '"+ textBox_stock.Text+"' where id like  "+id;
-
+                "', expiration_date ='"+ dateTimePicker_Expiration.Text+"', stock = '"+ textBox_stock.Text+"', price = "+double.Parse(textBox_Price.Text) +" where id like  "+id;
+            MessageBox.Show(sql);
             Global.con.Open(); 
             SqlCommand cmd = new SqlCommand(sql, Global.con);
             cmd.ExecuteNonQuery();
             Global.con.Close();
             ProductsGridViewRefresh();
 
-        }
+        } //Update product details
+
+       
+
+        
     }
 }
