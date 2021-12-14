@@ -99,10 +99,12 @@ namespace GroceryStore
             else //if yes
             {
                 int type = int.Parse(Global.ds.Tables[0].Rows[0]["atype"].ToString());
-                if(type==1) //verify admin account
+                Global.atype = type;
+                if (type==1) //verify admin account
                 {   
                     HideEverything();
                     openChildForm(new MenuAdmin());
+                    
                 }
                 else 
                     if(type==0) //verify normal user account
@@ -154,9 +156,13 @@ namespace GroceryStore
         }
 
 
-        #endregion  
 
 
+        #endregion
 
+        private void login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Order.DeleteOrder();
+        }
     }
 }

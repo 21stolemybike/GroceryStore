@@ -24,60 +24,45 @@ create table orders(
 id int not null identity(1,1) primary key, 
 product_id  int constraint fk_productId foreign key references products(id), 
 account_id int constraint fk_accountId foreign key references account(id), 
-fullName varchar(50) , 
-mobile int
+totalPrice float, 
+quantity int
 )
-
-insert into account (username,pass) values ('Denis','parola')
-insert into orders values (1,2,'Test Test','0839219203',20)
-
-select id as 'ID', product_name as 'Product Name', product_weight as 'Product Weight', product_origin as 'Product Origin', manufacture_date as 'Manufacture Date' 
-, expiration_date as 'Expiration Date', stock as 'Stock', price as 'Price' from products
 
 select * from orders
 select * from products
 select * from account
 
-delete from orders where id = (select max(id) from orders)
-
-
 
 delete from orders
-alter table orders add totalPrice float
-
-select product_name, totalPrice from orders as A inner join products as B on A.product_id = B.id where account_id like 1 
-
-
-
-insert into orders values (33,1,(select price*5 from products as B inner join orders as A on A.product_id = B.id where product_id = 33 ))
 
 
 
 
+go 
+create procedure DeleteUnsaved (@accountId int) 
+as 
+delete from orders where account_id = @accountId and saved = 0 
 
 
-
-delete from products where id = 2 
-
-update products set product_name , product_weight, product_origin , manufacture_date , expiration_date , stock where id like 1 
-
-
-
-
+go 
+alter procedure SaveOrder( @orderId int)
+as 
+declare @productId int
+declare @quantity int
+set @productId = (select product_id from orders where id = @orderId)
+set @quantity = (select quantity from orders where id = @orderId)
+update orders set saved = 1 where id = @orderId 
+update products set stock = stock - @quantity where id = @productId 
 
 
 
 
 
-update account set atype = 1 where username like 'test'
-
-update account set pass = 'marius' where username like 'marius'
 
 
 
 
- 
-alter table products ALTER COLUMN product_weight float
+
 
 
 

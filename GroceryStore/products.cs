@@ -18,7 +18,21 @@ namespace GroceryStore
             InitializeComponent();
         }
 
-       
+        private void StyleDataGrid()
+        {
+            dataGridView_Products.BorderStyle = BorderStyle.None;
+            dataGridView_Products.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(64, 0, 0);
+            dataGridView_Products.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView_Products.BackgroundColor = Color.FromArgb(64, 0, 0);
+            dataGridView_Products.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
+            dataGridView_Products.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataGridView_Products.EnableHeadersVisualStyles = false;
+            dataGridView_Products.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView_Products.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
+            dataGridView_Products.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
+            dataGridView_Products.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+        }
 
         private void products_Load(object sender, EventArgs e)
         {
@@ -30,6 +44,7 @@ namespace GroceryStore
             ProductsGridViewRefresh();
             dataGridView_Products.ReadOnly = true;
             dataGridView_Products.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            StyleDataGrid();
         }
 
         private void ProductsGridViewRefresh() //Refresh datagridview
@@ -147,6 +162,14 @@ namespace GroceryStore
 
         private void button_Delete_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this product ?", "", MessageBoxButtons.YesNo);
+            
+            if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+
+
             int selectedrowindex = dataGridView_Products.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = dataGridView_Products.Rows[selectedrowindex];
             string id = Convert.ToString(selectedRow.Cells["id"].Value);
@@ -176,7 +199,7 @@ namespace GroceryStore
             string sql = "update products set product_name ='"+textBox_ProductName.Text+"', product_weight ='" + textBox_Weight.Text +
                 "', product_origin ='"+ textBox_Origin.Text +"' , manufacture_date ='"+ dateTimePicker_Manufacture.Text+ 
                 "', expiration_date ='"+ dateTimePicker_Expiration.Text+"', stock = '"+ textBox_stock.Text+"', price = "+double.Parse(textBox_Price.Text) +" where id like  "+id;
-            MessageBox.Show(sql);
+            
             Global.con.Open(); 
             SqlCommand cmd = new SqlCommand(sql, Global.con);
             cmd.ExecuteNonQuery();
@@ -185,8 +208,5 @@ namespace GroceryStore
 
         } //Update product details
 
-       
-
-        
     }
 }

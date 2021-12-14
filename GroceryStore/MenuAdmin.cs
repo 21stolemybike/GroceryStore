@@ -20,7 +20,18 @@ namespace GroceryStore
 
         private void MenuAdmin_Load(object sender, EventArgs e)
         {
-            
+            if (Global.atype == 0)
+            {
+                button_Products.Visible = false;
+                button_Reports.Visible = false;
+            }
+            else
+            {
+                button_Products.Visible = true;
+                button_Reports.Visible = true;
+            }
+
+
         }
 
         private Form activeForm = null;
@@ -62,8 +73,12 @@ namespace GroceryStore
             openChildForm(new ManageAccount());
         }
 
-        #endregion 
 
+        #endregion
 
+        private void MenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
     }
 }

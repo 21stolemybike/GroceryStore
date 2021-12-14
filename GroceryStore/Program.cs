@@ -21,10 +21,11 @@ namespace GroceryStore
         public static string CurrentMobile;
         public static string CurrentFullName; 
         public static int nr=0;
+        public static int atype = 0;
 
         public static double totalValue=0;
-        public static List<int> orders = new List<int>();
-    }
+
+     }
     
     
     internal static class Program
