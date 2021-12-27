@@ -52,8 +52,9 @@
             this.panel_Login.Controls.Add(this.username_textbox);
             this.panel_Login.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Login.Location = new System.Drawing.Point(0, 0);
+            this.panel_Login.MinimumSize = new System.Drawing.Size(1594, 787);
             this.panel_Login.Name = "panel_Login";
-            this.panel_Login.Size = new System.Drawing.Size(1578, 748);
+            this.panel_Login.Size = new System.Drawing.Size(1594, 801);
             this.panel_Login.TabIndex = 0;
             // 
             // pictureBox
@@ -64,7 +65,7 @@
             this.pictureBox.Image = global::GroceryStore.Properties.Resources.loginlogo;
             this.pictureBox.Location = new System.Drawing.Point(517, 10);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(614, 474);
+            this.pictureBox.Size = new System.Drawing.Size(630, 527);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox.TabIndex = 6;
             this.pictureBox.TabStop = false;
@@ -76,9 +77,9 @@
             this.Login_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Login_Button.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login_Button.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Login_Button.Location = new System.Drawing.Point(0, 660);
+            this.Login_Button.Location = new System.Drawing.Point(0, 713);
             this.Login_Button.Name = "Login_Button";
-            this.Login_Button.Size = new System.Drawing.Size(1578, 44);
+            this.Login_Button.Size = new System.Drawing.Size(1594, 44);
             this.Login_Button.TabIndex = 5;
             this.Login_Button.Text = "Login ⨝";
             this.Login_Button.UseVisualStyleBackColor = false;
@@ -91,9 +92,9 @@
             this.Register_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Register_Button.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Register_Button.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Register_Button.Location = new System.Drawing.Point(0, 704);
+            this.Register_Button.Location = new System.Drawing.Point(0, 757);
             this.Register_Button.Name = "Register_Button";
-            this.Register_Button.Size = new System.Drawing.Size(1578, 44);
+            this.Register_Button.Size = new System.Drawing.Size(1594, 44);
             this.Register_Button.TabIndex = 4;
             this.Register_Button.Text = "Create Account ⎆";
             this.Register_Button.UseVisualStyleBackColor = false;
@@ -106,7 +107,7 @@
             this.label_Password.AutoSize = true;
             this.label_Password.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Password.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label_Password.Location = new System.Drawing.Point(230, 554);
+            this.label_Password.Location = new System.Drawing.Point(230, 607);
             this.label_Password.Name = "label_Password";
             this.label_Password.Size = new System.Drawing.Size(154, 34);
             this.label_Password.TabIndex = 3;
@@ -119,7 +120,7 @@
             this.label_Username.AutoSize = true;
             this.label_Username.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Username.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label_Username.Location = new System.Drawing.Point(230, 493);
+            this.label_Username.Location = new System.Drawing.Point(230, 546);
             this.label_Username.Name = "label_Username";
             this.label_Username.Size = new System.Drawing.Size(164, 34);
             this.label_Username.TabIndex = 2;
@@ -130,9 +131,9 @@
             this.password_textbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.password_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password_textbox.Location = new System.Drawing.Point(394, 551);
+            this.password_textbox.Location = new System.Drawing.Point(394, 604);
             this.password_textbox.Name = "password_textbox";
-            this.password_textbox.Size = new System.Drawing.Size(895, 38);
+            this.password_textbox.Size = new System.Drawing.Size(911, 38);
             this.password_textbox.TabIndex = 1;
             // 
             // username_textbox
@@ -140,16 +141,16 @@
             this.username_textbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.username_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username_textbox.Location = new System.Drawing.Point(394, 490);
+            this.username_textbox.Location = new System.Drawing.Point(394, 543);
             this.username_textbox.Name = "username_textbox";
-            this.username_textbox.Size = new System.Drawing.Size(895, 38);
+            this.username_textbox.Size = new System.Drawing.Size(911, 38);
             this.username_textbox.TabIndex = 0;
             // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1578, 748);
+            this.ClientSize = new System.Drawing.Size(1578, 801);
             this.Controls.Add(this.panel_Login);
             this.MinimumSize = new System.Drawing.Size(1304, 637);
             this.Name = "login";

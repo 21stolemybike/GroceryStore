@@ -20,6 +20,7 @@ namespace GroceryStore
         public static string CurrentUsername;
         public static string CurrentMobile;
         public static string CurrentFullName; 
+        public static string CurrentPassword;
         public static int nr=0;
         public static int atype = 0;
 

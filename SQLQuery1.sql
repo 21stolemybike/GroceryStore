@@ -28,10 +28,12 @@ totalPrice float,
 quantity int
 )
 
+select * from account
 select * from orders
 select * from products
-select * from account
 
+Select distinct  A.id, fullName from account as A inner join orders as B on A.id = B.account_id where fullName is not null 
+Select id, fullName from account where fullName is not null
 
 delete from orders
 
@@ -55,14 +57,29 @@ update orders set saved = 1 where id = @orderId
 update products set stock = stock - @quantity where id = @productId 
 
 
+select sum(totalprice) from orders  where product_id=33
 
 
+go 
+alter procedure GetProductsSale (@productId int, @sum float output,@quant int output ) 
+as 
+set @sum = (select sum(totalprice) from orders  where product_id= @productId)
+set @quant = (select sum(quantity) from orders where product_id = @productId) 
+
+declare @Sum float, @Quant int 
+exec GetProductsSale @productId = 33 , @sum = @Sum OUTPUT , @Quant = @quant OUTPUT
+select @Sum, @Quant
 
 
+go 
+alter procedure GetAccountTotalValue (@accountId int, @sum float output) 
+as 
+set @sum = ( select sum(totalPrice) from orders where account_id = @accountId ) 
 
 
-
-
+declare @Sum float 
+exec GetAccountTotalValue @accountId = 6, @sum = @Sum output 
+select @Sum
 
 
 

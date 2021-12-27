@@ -95,35 +95,39 @@
             this.panel1.Controls.Add(this.button_SaveOrder);
             this.panel1.Location = new System.Drawing.Point(958, 451);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(216, 100);
+            this.panel1.Size = new System.Drawing.Size(219, 100);
             this.panel1.TabIndex = 28;
             // 
             // button_DeleteFromOrder
             // 
+            this.button_DeleteFromOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button_DeleteFromOrder.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_DeleteFromOrder.FlatAppearance.BorderSize = 0;
+            this.button_DeleteFromOrder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_DeleteFromOrder.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_DeleteFromOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_DeleteFromOrder.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_DeleteFromOrder.Location = new System.Drawing.Point(0, 0);
             this.button_DeleteFromOrder.Name = "button_DeleteFromOrder";
-            this.button_DeleteFromOrder.Size = new System.Drawing.Size(216, 47);
+            this.button_DeleteFromOrder.Size = new System.Drawing.Size(219, 47);
             this.button_DeleteFromOrder.TabIndex = 25;
             this.button_DeleteFromOrder.Text = "Delete From Order";
-            this.button_DeleteFromOrder.UseVisualStyleBackColor = true;
+            this.button_DeleteFromOrder.UseVisualStyleBackColor = false;
             this.button_DeleteFromOrder.Click += new System.EventHandler(this.button_DeleteFromOrder_Click);
             // 
             // button_SaveOrder
             // 
+            this.button_SaveOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button_SaveOrder.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button_SaveOrder.FlatAppearance.BorderSize = 0;
+            this.button_SaveOrder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_SaveOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_SaveOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_SaveOrder.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_SaveOrder.Location = new System.Drawing.Point(0, 53);
             this.button_SaveOrder.Name = "button_SaveOrder";
-            this.button_SaveOrder.Size = new System.Drawing.Size(216, 47);
+            this.button_SaveOrder.Size = new System.Drawing.Size(219, 47);
             this.button_SaveOrder.TabIndex = 27;
             this.button_SaveOrder.Text = "💾";
-            this.button_SaveOrder.UseVisualStyleBackColor = true;
+            this.button_SaveOrder.UseVisualStyleBackColor = false;
             this.button_SaveOrder.Click += new System.EventHandler(this.button_SaveOrder_Click);
             // 
             // label_DeleteFromOrderError
@@ -188,9 +192,8 @@
             this.label_Stock.ForeColor = System.Drawing.Color.Red;
             this.label_Stock.Location = new System.Drawing.Point(13, 112);
             this.label_Stock.Name = "label_Stock";
-            this.label_Stock.Size = new System.Drawing.Size(27, 32);
+            this.label_Stock.Size = new System.Drawing.Size(0, 32);
             this.label_Stock.TabIndex = 28;
-            this.label_Stock.Text = "1";
             // 
             // label_QuantityError
             // 
@@ -200,21 +203,22 @@
             this.label_QuantityError.ForeColor = System.Drawing.Color.Red;
             this.label_QuantityError.Location = new System.Drawing.Point(419, 112);
             this.label_QuantityError.Name = "label_QuantityError";
-            this.label_QuantityError.Size = new System.Drawing.Size(27, 32);
+            this.label_QuantityError.Size = new System.Drawing.Size(0, 32);
             this.label_QuantityError.TabIndex = 27;
-            this.label_QuantityError.Text = "1";
             // 
             // button_AddItem
             // 
             this.button_AddItem.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button_AddItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_AddItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_AddItem.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_AddItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_AddItem.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_AddItem.Location = new System.Drawing.Point(858, 57);
             this.button_AddItem.Name = "button_AddItem";
             this.button_AddItem.Size = new System.Drawing.Size(148, 40);
             this.button_AddItem.TabIndex = 6;
             this.button_AddItem.Text = "Add Product";
-            this.button_AddItem.UseVisualStyleBackColor = true;
+            this.button_AddItem.UseVisualStyleBackColor = false;
             this.button_AddItem.Click += new System.EventHandler(this.button_AddItem_Click);
             // 
             // label4
@@ -284,6 +288,7 @@
             this.dataGridView_Products.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_Products.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView_Products.Location = new System.Drawing.Point(74, 29);
+            this.dataGridView_Products.MultiSelect = false;
             this.dataGridView_Products.Name = "dataGridView_Products";
             this.dataGridView_Products.ReadOnly = true;
             this.dataGridView_Products.RowHeadersVisible = false;
@@ -319,13 +324,18 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_Orders.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView_Orders.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView_Orders.Location = new System.Drawing.Point(74, 451);
             this.dataGridView_Orders.Name = "dataGridView_Orders";
             this.dataGridView_Orders.ReadOnly = true;
             this.dataGridView_Orders.RowHeadersVisible = false;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Yu Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView_Orders.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView_Orders.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView_Orders.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dataGridView_Orders.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView_Orders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_Orders.Size = new System.Drawing.Size(446, 228);
             this.dataGridView_Orders.TabIndex = 4;

@@ -76,7 +76,7 @@ namespace GroceryStore
             comboBox1.SelectedIndexChanged -= comboBox1_SelectedIndexChanged; //Detach event
             
             
-            SqlDataAdapter daFarm = new SqlDataAdapter("Select product_name,id from Products", Global.con);
+            SqlDataAdapter daFarm = new SqlDataAdapter("Select product_name,id from Products where stock > 0", Global.con);
             daFarm.Fill(Global.ds, "Products");
             DataView dv = new DataView(Global.ds.Tables["Products"]);
             dv.Sort = "product_name";
@@ -346,6 +346,8 @@ namespace GroceryStore
             Global.con.Close();
             OrdersGridViewRefresh();
             ProductsGridViewRefresh();
+            loadComboBox();
+            comboBox1.SelectedIndex = 1;
             Global.totalValue = 0;
             orderSaved = 1;
         }

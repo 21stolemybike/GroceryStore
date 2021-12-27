@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker_Manufacture = new System.Windows.Forms.DateTimePicker();
@@ -54,11 +55,14 @@
             this.textBox_Price = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label_PriceError = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Products)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker_Manufacture
             // 
+            this.dateTimePicker_Manufacture.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.dateTimePicker_Manufacture.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_Manufacture.Location = new System.Drawing.Point(107, 247);
             this.dateTimePicker_Manufacture.Name = "dateTimePicker_Manufacture";
@@ -68,6 +72,7 @@
             // dateTimePicker_Expiration
             // 
             this.dateTimePicker_Expiration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker_Expiration.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.dateTimePicker_Expiration.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_Expiration.Location = new System.Drawing.Point(874, 247);
             this.dateTimePicker_Expiration.Name = "dateTimePicker_Expiration";
@@ -186,11 +191,13 @@
             // button_Add
             // 
             this.button_Add.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button_Add.BackColor = System.Drawing.Color.Transparent;
+            this.button_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button_Add.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button_Add.FlatAppearance.BorderSize = 0;
+            this.button_Add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Add.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Add.Location = new System.Drawing.Point(546, 161);
+            this.button_Add.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button_Add.Location = new System.Drawing.Point(526, 161);
             this.button_Add.MaximumSize = new System.Drawing.Size(234, 40);
             this.button_Add.Name = "button_Add";
             this.button_Add.Size = new System.Drawing.Size(234, 40);
@@ -202,29 +209,35 @@
             // button_Delete
             // 
             this.button_Delete.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button_Delete.FlatAppearance.BorderSize = 0;
+            this.button_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Delete.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Delete.Location = new System.Drawing.Point(546, 207);
+            this.button_Delete.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button_Delete.Location = new System.Drawing.Point(526, 207);
             this.button_Delete.MaximumSize = new System.Drawing.Size(234, 40);
             this.button_Delete.Name = "button_Delete";
             this.button_Delete.Size = new System.Drawing.Size(234, 40);
             this.button_Delete.TabIndex = 14;
             this.button_Delete.Text = "Delete Product ";
-            this.button_Delete.UseVisualStyleBackColor = true;
+            this.button_Delete.UseVisualStyleBackColor = false;
             this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
             // 
             // button_Update
             // 
             this.button_Update.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button_Update.FlatAppearance.BorderSize = 0;
+            this.button_Update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Update.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Update.Location = new System.Drawing.Point(546, 253);
+            this.button_Update.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button_Update.Location = new System.Drawing.Point(526, 253);
             this.button_Update.MaximumSize = new System.Drawing.Size(234, 40);
             this.button_Update.Name = "button_Update";
             this.button_Update.Size = new System.Drawing.Size(234, 40);
             this.button_Update.TabIndex = 15;
             this.button_Update.Text = "Update Product";
-            this.button_Update.UseVisualStyleBackColor = true;
+            this.button_Update.UseVisualStyleBackColor = false;
             this.button_Update.Click += new System.EventHandler(this.button_Update_Click);
             // 
             // label_NameError
@@ -235,9 +248,8 @@
             this.label_NameError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label_NameError.Location = new System.Drawing.Point(12, 110);
             this.label_NameError.Name = "label_NameError";
-            this.label_NameError.Size = new System.Drawing.Size(20, 22);
+            this.label_NameError.Size = new System.Drawing.Size(0, 22);
             this.label_NameError.TabIndex = 16;
-            this.label_NameError.Text = "1";
             // 
             // label_WeightError
             // 
@@ -247,9 +259,8 @@
             this.label_WeightError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label_WeightError.Location = new System.Drawing.Point(246, 110);
             this.label_WeightError.Name = "label_WeightError";
-            this.label_WeightError.Size = new System.Drawing.Size(20, 22);
+            this.label_WeightError.Size = new System.Drawing.Size(0, 22);
             this.label_WeightError.TabIndex = 17;
-            this.label_WeightError.Text = "2";
             // 
             // label_CountryError
             // 
@@ -260,9 +271,8 @@
             this.label_CountryError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label_CountryError.Location = new System.Drawing.Point(542, 110);
             this.label_CountryError.Name = "label_CountryError";
-            this.label_CountryError.Size = new System.Drawing.Size(20, 22);
+            this.label_CountryError.Size = new System.Drawing.Size(0, 22);
             this.label_CountryError.TabIndex = 18;
-            this.label_CountryError.Text = "3";
             // 
             // label_StockError
             // 
@@ -273,17 +283,14 @@
             this.label_StockError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label_StockError.Location = new System.Drawing.Point(807, 110);
             this.label_StockError.Name = "label_StockError";
-            this.label_StockError.Size = new System.Drawing.Size(20, 22);
+            this.label_StockError.Size = new System.Drawing.Size(0, 22);
             this.label_StockError.TabIndex = 19;
-            this.label_StockError.Text = "4";
             // 
             // dataGridView_Products
             // 
             this.dataGridView_Products.AllowUserToAddRows = false;
             this.dataGridView_Products.AllowUserToDeleteRows = false;
-            this.dataGridView_Products.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView_Products.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_Products.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_Products.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -319,15 +326,18 @@
             // button_Clear
             // 
             this.button_Clear.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button_Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button_Clear.FlatAppearance.BorderSize = 0;
+            this.button_Clear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Clear.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Clear.Location = new System.Drawing.Point(546, 299);
+            this.button_Clear.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button_Clear.Location = new System.Drawing.Point(526, 299);
             this.button_Clear.MaximumSize = new System.Drawing.Size(234, 40);
             this.button_Clear.Name = "button_Clear";
             this.button_Clear.Size = new System.Drawing.Size(234, 40);
             this.button_Clear.TabIndex = 21;
             this.button_Clear.Text = "Clear";
-            this.button_Clear.UseVisualStyleBackColor = true;
+            this.button_Clear.UseVisualStyleBackColor = false;
             this.button_Clear.Click += new System.EventHandler(this.button_Clear_Click);
             // 
             // textBox_Price
@@ -361,9 +371,12 @@
             this.label_PriceError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label_PriceError.Location = new System.Drawing.Point(1026, 110);
             this.label_PriceError.Name = "label_PriceError";
-            this.label_PriceError.Size = new System.Drawing.Size(20, 22);
+            this.label_PriceError.Size = new System.Drawing.Size(0, 22);
             this.label_PriceError.TabIndex = 24;
-            this.label_PriceError.Text = "5";
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // products
             // 
@@ -400,6 +413,7 @@
             this.Text = "products";
             this.Load += new System.EventHandler(this.products_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Products)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,5 +444,6 @@
         private System.Windows.Forms.TextBox textBox_Price;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label_PriceError;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

@@ -100,25 +100,15 @@ namespace GroceryStore
             {
                 int type = int.Parse(Global.ds.Tables[0].Rows[0]["atype"].ToString());
                 Global.atype = type;
-                if (type==1) //verify admin account
-                {   
-                    HideEverything();
-                    openChildForm(new MenuAdmin());
-                    
-                }
-                else 
-                    if(type==0) //verify normal user account
-                {
-                    HideEverything();
-                    openChildForm(new MenuAdmin()); //Trebuie schimbat inapoi cand ajung la partea asta si sters comentariu
-                }
+                HideEverything();
+                openChildForm(new MenuAdmin());
             }
             
             Global.CurrentUsername = username;
             Global.CurrentId = Global.ds.Tables[0].Rows[0]["id"].ToString();
             Global.CurrentFullName = Global.ds.Tables[0].Rows[0]["fullName"].ToString();
             Global.CurrentMobile = Global.ds.Tables[0].Rows[0]["mobile"].ToString();
-            
+            Global.CurrentPassword = Global.ds.Tables[0].Rows[0]["pass"].ToString();
             
             Global.con.Close();
             
@@ -162,7 +152,12 @@ namespace GroceryStore
 
         private void login_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Order.DeleteOrder();
-        }
+            
+            if (!string.IsNullOrEmpty(Global.CurrentId))
+            {
+                Order.DeleteOrder();
+                Global.con.Close();
+            }
+        } //Occurs when form is closed
     }
 }
