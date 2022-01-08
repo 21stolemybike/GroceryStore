@@ -41,7 +41,7 @@
             // 
             // Panel_Menu
             // 
-            this.Panel_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Panel_Menu.BackColor = System.Drawing.Color.Black;
             this.Panel_Menu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Panel_Menu.Controls.Add(this.button_Products);
             this.Panel_Menu.Controls.Add(this.button_Order);
@@ -80,7 +80,7 @@
             this.button_Order.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_Order.Location = new System.Drawing.Point(3, 354);
             this.button_Order.Name = "button_Order";
-            this.button_Order.Size = new System.Drawing.Size(322, 47);
+            this.button_Order.Size = new System.Drawing.Size(315, 47);
             this.button_Order.TabIndex = 1;
             this.button_Order.Text = "⛟              Shop";
             this.button_Order.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -117,6 +117,7 @@
             this.button_AboutUs.Text = "❓          About us";
             this.button_AboutUs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_AboutUs.UseVisualStyleBackColor = true;
+            this.button_AboutUs.Click += new System.EventHandler(this.button_AboutUs_Click);
             // 
             // button_Reports
             // 
@@ -125,9 +126,9 @@
             this.button_Reports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Reports.Font = new System.Drawing.Font("Tempus Sans ITC", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Reports.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button_Reports.Location = new System.Drawing.Point(1, 303);
+            this.button_Reports.Location = new System.Drawing.Point(-2, 303);
             this.button_Reports.Name = "button_Reports";
-            this.button_Reports.Size = new System.Drawing.Size(315, 54);
+            this.button_Reports.Size = new System.Drawing.Size(315, 45);
             this.button_Reports.TabIndex = 2;
             this.button_Reports.Text = "✔           Reports";
             this.button_Reports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

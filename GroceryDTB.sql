@@ -25,7 +25,8 @@ id int not null identity(1,1) primary key,
 product_id  int constraint fk_productId foreign key references products(id), 
 account_id int constraint fk_accountId foreign key references account(id), 
 totalPrice float, 
-quantity int
+quantity int,
+saved int
 )
 
 select * from account
@@ -35,10 +36,11 @@ select * from products
 Select distinct  A.id, fullName from account as A inner join orders as B on A.id = B.account_id where fullName is not null 
 Select id, fullName from account where fullName is not null
 
-delete from orders
+delete from account where id = 1010
 
+update account set fullName = 'Arsenica Sebastian' where id like 1
 
-
+select product_name from products where stock=10 and price=5 
 
 go 
 create procedure DeleteUnsaved (@accountId int) 

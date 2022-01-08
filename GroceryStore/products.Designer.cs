@@ -62,6 +62,7 @@
             // 
             // dateTimePicker_Manufacture
             // 
+            this.dateTimePicker_Manufacture.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.dateTimePicker_Manufacture.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.dateTimePicker_Manufacture.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_Manufacture.Location = new System.Drawing.Point(107, 247);
@@ -71,7 +72,7 @@
             // 
             // dateTimePicker_Expiration
             // 
-            this.dateTimePicker_Expiration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker_Expiration.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.dateTimePicker_Expiration.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.dateTimePicker_Expiration.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_Expiration.Location = new System.Drawing.Point(874, 247);
@@ -82,9 +83,9 @@
             // textBox_ProductName
             // 
             this.textBox_ProductName.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_ProductName.Location = new System.Drawing.Point(34, 70);
+            this.textBox_ProductName.Location = new System.Drawing.Point(29, 110);
             this.textBox_ProductName.Name = "textBox_ProductName";
-            this.textBox_ProductName.Size = new System.Drawing.Size(143, 37);
+            this.textBox_ProductName.Size = new System.Drawing.Size(152, 37);
             this.textBox_ProductName.TabIndex = 3;
             // 
             // label1
@@ -93,7 +94,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(28, 29);
+            this.label1.Location = new System.Drawing.Point(23, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 31);
             this.label1.TabIndex = 4;
@@ -105,7 +106,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Location = new System.Drawing.Point(298, 29);
+            this.label2.Location = new System.Drawing.Point(304, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 31);
             this.label2.TabIndex = 5;
@@ -114,7 +115,7 @@
             // textBox_Weight
             // 
             this.textBox_Weight.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Weight.Location = new System.Drawing.Point(269, 70);
+            this.textBox_Weight.Location = new System.Drawing.Point(275, 110);
             this.textBox_Weight.Name = "textBox_Weight";
             this.textBox_Weight.Size = new System.Drawing.Size(156, 37);
             this.textBox_Weight.TabIndex = 6;
@@ -126,7 +127,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label3.Location = new System.Drawing.Point(540, 29);
+            this.label3.Location = new System.Drawing.Point(535, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(197, 31);
             this.label3.TabIndex = 7;
@@ -139,7 +140,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Location = new System.Drawing.Point(868, 29);
+            this.label4.Location = new System.Drawing.Point(863, 69);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 31);
             this.label4.TabIndex = 8;
@@ -149,7 +150,7 @@
             // 
             this.textBox_Origin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox_Origin.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Origin.Location = new System.Drawing.Point(566, 70);
+            this.textBox_Origin.Location = new System.Drawing.Point(561, 110);
             this.textBox_Origin.Name = "textBox_Origin";
             this.textBox_Origin.Size = new System.Drawing.Size(154, 37);
             this.textBox_Origin.TabIndex = 9;
@@ -158,13 +159,14 @@
             // 
             this.textBox_stock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_stock.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_stock.Location = new System.Drawing.Point(837, 70);
+            this.textBox_stock.Location = new System.Drawing.Point(832, 110);
             this.textBox_stock.Name = "textBox_stock";
             this.textBox_stock.Size = new System.Drawing.Size(151, 37);
             this.textBox_stock.TabIndex = 10;
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -177,7 +179,7 @@
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -190,7 +192,7 @@
             // 
             // button_Add
             // 
-            this.button_Add.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button_Add.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button_Add.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button_Add.FlatAppearance.BorderSize = 0;
@@ -208,7 +210,7 @@
             // 
             // button_Delete
             // 
-            this.button_Delete.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button_Delete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button_Delete.FlatAppearance.BorderSize = 0;
             this.button_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -225,7 +227,7 @@
             // 
             // button_Update
             // 
-            this.button_Update.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button_Update.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button_Update.FlatAppearance.BorderSize = 0;
             this.button_Update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -290,8 +292,9 @@
             // 
             this.dataGridView_Products.AllowUserToAddRows = false;
             this.dataGridView_Products.AllowUserToDeleteRows = false;
-            this.dataGridView_Products.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView_Products.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.dataGridView_Products.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_Products.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView_Products.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -311,7 +314,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_Products.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_Products.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView_Products.Location = new System.Drawing.Point(304, 402);
+            this.dataGridView_Products.Location = new System.Drawing.Point(206, 394);
             this.dataGridView_Products.MaximumSize = new System.Drawing.Size(950, 800);
             this.dataGridView_Products.Name = "dataGridView_Products";
             this.dataGridView_Products.RowHeadersVisible = false;
@@ -319,13 +322,13 @@
             this.dataGridView_Products.RowTemplate.ReadOnly = true;
             this.dataGridView_Products.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_Products.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_Products.Size = new System.Drawing.Size(933, 240);
+            this.dataGridView_Products.Size = new System.Drawing.Size(833, 240);
             this.dataGridView_Products.TabIndex = 20;
             this.dataGridView_Products.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Products_CellClick);
             // 
             // button_Clear
             // 
-            this.button_Clear.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button_Clear.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button_Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button_Clear.FlatAppearance.BorderSize = 0;
             this.button_Clear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -344,7 +347,7 @@
             // 
             this.textBox_Price.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Price.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Price.Location = new System.Drawing.Point(1046, 70);
+            this.textBox_Price.Location = new System.Drawing.Point(1041, 110);
             this.textBox_Price.Name = "textBox_Price";
             this.textBox_Price.Size = new System.Drawing.Size(151, 37);
             this.textBox_Price.TabIndex = 23;
@@ -356,7 +359,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label7.Location = new System.Drawing.Point(1082, 29);
+            this.label7.Location = new System.Drawing.Point(1077, 69);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 31);
             this.label7.TabIndex = 22;
@@ -383,7 +386,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1240, 709);
             this.Controls.Add(this.label_PriceError);
             this.Controls.Add(this.textBox_Price);

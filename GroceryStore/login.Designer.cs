@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.panel_Login = new System.Windows.Forms.Panel();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.Login_Button = new System.Windows.Forms.Button();
@@ -152,9 +153,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1578, 801);
             this.Controls.Add(this.panel_Login);
-            this.MinimumSize = new System.Drawing.Size(1304, 637);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1594, 840);
             this.Name = "login";
-            this.Text = "login";
+            this.Text = "Grocery Store";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.login_FormClosed);
             this.Load += new System.EventHandler(this.login_Load);
             this.panel_Login.ResumeLayout(false);

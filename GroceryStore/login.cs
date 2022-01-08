@@ -16,7 +16,7 @@ namespace GroceryStore
     public partial class login : Form
     {
         internal static login form;
-        
+
         public login()
         {
             InitializeComponent();
@@ -143,6 +143,8 @@ namespace GroceryStore
             cmd = new SqlCommand(insert, Global.con);
             cmd.ExecuteNonQuery();
             Global.con.Close();
+            
+            MessageBox.Show("Account successfully created", "",MessageBoxButtons.OK);
         }
 
 

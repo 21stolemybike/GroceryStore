@@ -117,20 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="blurred_supermarket_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\blurred-supermarket-background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_manage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon-manage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="productsimagebmp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\productsimagebmp.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="loginlogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loginlogo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="JB-FE-Shop_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\JB-FE-Shop_10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>‘Grocery Store’
+
+What began little, with a solitary idea of a store that provides a rebate and the basic thought of moving more for less, 
+has become in the course of the last 40 years into the biggest retailer in this whole country.
+
+Every week, about 265 million clients and individuals visit our in excess 
+of 13,200 stores under 55 standards in 27 nations and eCommerce sites in 10 nations.
+
+With the financial year 2018 income of $500.3 billion, ‘Grocery Store’ utilizes over 2.2 million partners around the world.
+
+‘Grocery Store’ keeps on being an innovator in supportability, corporate magnanimity, and 
+work opportunity. It’s everything part of our relentless promise to make openings and convey an 
+incentive to clients and networks the world over.
+</value>
   </data>
 </root>

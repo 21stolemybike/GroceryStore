@@ -149,9 +149,9 @@
             this.label_TotalAmount.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label_TotalAmount.Location = new System.Drawing.Point(719, 451);
             this.label_TotalAmount.Name = "label_TotalAmount";
-            this.label_TotalAmount.Size = new System.Drawing.Size(51, 32);
+            this.label_TotalAmount.Size = new System.Drawing.Size(27, 32);
             this.label_TotalAmount.TabIndex = 24;
-            this.label_TotalAmount.Text = "text";
+            this.label_TotalAmount.Text = "0";
             // 
             // label5
             // 
@@ -267,7 +267,9 @@
             // 
             this.dataGridView_Products.AllowUserToAddRows = false;
             this.dataGridView_Products.AllowUserToDeleteRows = false;
-            this.dataGridView_Products.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_Products.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dataGridView_Products.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView_Products.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView_Products.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -287,7 +289,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_Products.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_Products.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView_Products.Location = new System.Drawing.Point(74, 29);
+            this.dataGridView_Products.Location = new System.Drawing.Point(169, 29);
             this.dataGridView_Products.MultiSelect = false;
             this.dataGridView_Products.Name = "dataGridView_Products";
             this.dataGridView_Products.ReadOnly = true;
@@ -306,6 +308,8 @@
             this.dataGridView_Orders.AllowUserToResizeColumns = false;
             this.dataGridView_Orders.AllowUserToResizeRows = false;
             this.dataGridView_Orders.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridView_Orders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView_Orders.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView_Orders.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));

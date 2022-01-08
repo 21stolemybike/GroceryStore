@@ -78,6 +78,11 @@ namespace GroceryStore
             openChildForm(new Reports());
         }
 
+        private void button_AboutUs_Click(object sender, EventArgs e)
+        {
+            openChildForm(new AboutUs());
+        }
+
         #endregion
 
         private void MenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
@@ -85,6 +90,6 @@ namespace GroceryStore
             
         }
 
-       
+        
     }
 }

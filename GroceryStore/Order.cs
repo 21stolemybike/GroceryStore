@@ -21,7 +21,7 @@ namespace GroceryStore
             form = this;
         }
 
-        int orderSaved = 0, CurrentQuantity = 0;
+        int orderSaved = 0,CurrentQuantity=0;
        
         private void Order_Load(object sender, EventArgs e)
         {
@@ -90,21 +90,21 @@ namespace GroceryStore
 
         private int VerifyStock(int n) //Verify if the current stock can supply quantity needds 
         {
-            string sql = "select stock from products where id = " + comboBox1.SelectedValue;
+            SqlCommand cmd = new SqlCommand("VerifiyStock", Global.con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@accountId", Global.CurrentId);
+            cmd.Parameters.AddWithValue("@productId", comboBox1.SelectedValue);
+            cmd.Parameters.AddWithValue("@textboxValue", n);
+            SqlParameter outResult = new SqlParameter("@result", SqlDbType.Int) { Direction = ParameterDirection.Output };
+            cmd.Parameters.Add(outResult);
             Global.con.Open();
-            SqlCommand cmd = new SqlCommand(sql, Global.con);
-            object obj = cmd.ExecuteScalar();
-            int TotalStock = Convert.ToInt32(obj);
-
-
-            sql = "select quantity from orders where product_id = " + comboBox1.SelectedValue;
-            cmd = new SqlCommand(sql, Global.con);
-            obj = cmd.ExecuteScalar();
-            int currentQuantity = 0;
-            Global.con.Close();
+            cmd.ExecuteNonQuery();
             
-            if (TotalStock - currentQuantity - n < 0)
-            { label_QuantityError.Text = "Quantity bigger than stock!"; return 0; }
+           
+            int result = Convert.ToInt32(outResult.Value);
+            Global.con.Close();
+            if (result == 0)
+             return 0; 
             else
                 return 1;
             
@@ -221,26 +221,12 @@ namespace GroceryStore
             }
             else label_QuantityError.Text = "";
 
-            //Get stock value from products table
-            string sql = "select stock from products where id = "+ int.Parse(comboBox1.SelectedValue.ToString());
-            Global.con.Open(); 
-            SqlCommand cmd = new SqlCommand(sql, Global.con);
-            object obj = cmd.ExecuteScalar();
-            int result = Convert.ToInt32(obj);
             
-            
-            //Verify if quantity is higher than stock
-            if (int.Parse(textBox_Quantity.Text) > result) 
-            {
-                label_QuantityError.Text = "Quantity bigger than stock!"; Global.con.Close(); return;
-            }
-            else
-                label_QuantityError.Text = ""; //Delete label text if value is correct
-
             //Get price value from products table
-            sql = "select price from products where id = " + int.Parse(comboBox1.SelectedValue.ToString());
-            cmd = new SqlCommand(sql, Global.con); 
-            obj = cmd.ExecuteScalar(); 
+            Global.con.Open();
+            string sql = "select price from products where id = " + int.Parse(comboBox1.SelectedValue.ToString());
+            SqlCommand cmd = new SqlCommand(sql, Global.con); 
+            object obj = cmd.ExecuteScalar(); 
             
             double price = Convert.ToDouble(obj); //Get price value
             double currentValue = price * double.Parse(textBox_Quantity.Text); //Calculate current value price*quantity
@@ -248,9 +234,10 @@ namespace GroceryStore
 
             //Verify if the product already exists in the order
             sql = "select count(*) from orders where product_id like " + int.Parse(comboBox1.SelectedValue.ToString()) + " and account_id like " + int.Parse(Global.CurrentId)+ " and saved like 0";
-             cmd = new SqlCommand(sql, Global.con);
-             obj = cmd.ExecuteScalar();
-             result = Convert.ToInt32(obj);
+            cmd = new SqlCommand(sql, Global.con);
+            
+            obj = cmd.ExecuteScalar();
+            int result = Convert.ToInt32(obj);
             
             
             

@@ -83,9 +83,29 @@ namespace GroceryStore.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap JB_FE_Shop_10 {
+            get {
+                object obj = ResourceManager.GetObject("JB-FE-Shop_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loginlogo {
             get {
                 object obj = ResourceManager.GetObject("loginlogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap productsimagebmp {
+            get {
+                object obj = ResourceManager.GetObject("productsimagebmp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

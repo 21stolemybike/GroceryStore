@@ -38,11 +38,11 @@
             this.button_ChangeMobile = new System.Windows.Forms.Button();
             this.textBox_Mobile = new System.Windows.Forms.TextBox();
             this.groupBox_AddAdmin = new System.Windows.Forms.GroupBox();
+            this.textBox_Pass = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.button_Add = new System.Windows.Forms.Button();
             this.textBox_Username = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox_Pass = new System.Windows.Forms.TextBox();
             this.groupBox_ChangePass.SuspendLayout();
             this.groupBox_ChangeMobile.SuspendLayout();
             this.groupBox_AddAdmin.SuspendLayout();
@@ -92,7 +92,7 @@
             this.groupBox_ChangePass.Controls.Add(this.textBox_ChangePass);
             this.groupBox_ChangePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_ChangePass.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox_ChangePass.Location = new System.Drawing.Point(48, 404);
+            this.groupBox_ChangePass.Location = new System.Drawing.Point(42, 403);
             this.groupBox_ChangePass.Name = "groupBox_ChangePass";
             this.groupBox_ChangePass.Size = new System.Drawing.Size(409, 178);
             this.groupBox_ChangePass.TabIndex = 7;
@@ -134,7 +134,7 @@
             this.groupBox_ChangeMobile.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox_ChangeMobile.Location = new System.Drawing.Point(42, 130);
             this.groupBox_ChangeMobile.Name = "groupBox_ChangeMobile";
-            this.groupBox_ChangeMobile.Size = new System.Drawing.Size(412, 193);
+            this.groupBox_ChangeMobile.Size = new System.Drawing.Size(409, 178);
             this.groupBox_ChangeMobile.TabIndex = 8;
             this.groupBox_ChangeMobile.TabStop = false;
             this.groupBox_ChangeMobile.Text = "Change Mobile";
@@ -146,9 +146,9 @@
             this.button_ChangeMobile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_ChangeMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_ChangeMobile.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button_ChangeMobile.Location = new System.Drawing.Point(3, 142);
+            this.button_ChangeMobile.Location = new System.Drawing.Point(3, 127);
             this.button_ChangeMobile.Name = "button_ChangeMobile";
-            this.button_ChangeMobile.Size = new System.Drawing.Size(406, 48);
+            this.button_ChangeMobile.Size = new System.Drawing.Size(403, 48);
             this.button_ChangeMobile.TabIndex = 5;
             this.button_ChangeMobile.Text = "Save";
             this.button_ChangeMobile.UseVisualStyleBackColor = true;
@@ -161,7 +161,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Mobile.Location = new System.Drawing.Point(6, 49);
             this.textBox_Mobile.Name = "textBox_Mobile";
-            this.textBox_Mobile.Size = new System.Drawing.Size(399, 38);
+            this.textBox_Mobile.Size = new System.Drawing.Size(396, 38);
             this.textBox_Mobile.TabIndex = 0;
             // 
             // groupBox_AddAdmin
@@ -181,6 +181,34 @@
             this.groupBox_AddAdmin.TabIndex = 9;
             this.groupBox_AddAdmin.TabStop = false;
             this.groupBox_AddAdmin.Text = "Add admin account";
+            // 
+            // textBox_Pass
+            // 
+            this.textBox_Pass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_Pass.Location = new System.Drawing.Point(189, 103);
+            this.textBox_Pass.Name = "textBox_Pass";
+            this.textBox_Pass.Size = new System.Drawing.Size(297, 38);
+            this.textBox_Pass.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(26, 106);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 31);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Password:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(147, 31);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Username:";
             // 
             // button_Add
             // 
@@ -206,34 +234,6 @@
             this.textBox_Username.Name = "textBox_Username";
             this.textBox_Username.Size = new System.Drawing.Size(297, 38);
             this.textBox_Username.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 31);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Username:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 31);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Password:";
-            // 
-            // textBox_Pass
-            // 
-            this.textBox_Pass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_Pass.Location = new System.Drawing.Point(189, 103);
-            this.textBox_Pass.Name = "textBox_Pass";
-            this.textBox_Pass.Size = new System.Drawing.Size(297, 38);
-            this.textBox_Pass.TabIndex = 8;
             // 
             // ManageAccount
             // 
