@@ -83,8 +83,20 @@ declare @Sum float
 exec GetAccountTotalValue @accountId = 6, @sum = @Sum output 
 select @Sum
 
+go 
+alter procedure VerifiyStock(@accountId int,@productId int,@textboxValue int,@result int output) 
+as 
+declare @stock int
+declare @currentUnsavedQuantity int
+set @stock = (select stock from products where id = @productId)
+set @currentUnsavedQuantity = (select quantity from orders where product_id = @productId and account_id = @accountId and saved = 0) 
+if (@stock - @currentUnsavedQuantity - @textboxValue < 0) 
+set @result = 0 
+else 
+set @result = 1 
 
 
+select quantity from orders where product_id = 33 and account_id = 1 and saved = 0
 
 
-
+select * from orders
