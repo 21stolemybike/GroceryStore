@@ -22,8 +22,8 @@ price float
 
 create table orders( 
 id int not null identity(1,1) primary key, 
-product_id  int constraint fk_productId foreign key references products(id), 
-account_id int constraint fk_accountId foreign key references account(id), 
+product_id  int constraint, 
+account_id int, 
 totalPrice float, 
 quantity int,
 saved int
@@ -33,14 +33,7 @@ select * from account
 select * from orders
 select * from products
 
-Select distinct  A.id, fullName from account as A inner join orders as B on A.id = B.account_id where fullName is not null 
-Select id, fullName from account where fullName is not null
 
-delete from account where id = 1010
-
-update account set fullName = 'Arsenica Sebastian' where id like 1
-
-select product_name from products where stock=10 and price=5 
 
 go 
 create procedure DeleteUnsaved (@accountId int) 
@@ -96,7 +89,5 @@ else
 set @result = 1 
 
 
-select quantity from orders where product_id = 33 and account_id = 1 and saved = 0
 
 
-select * from orders

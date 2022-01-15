@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(products));
             this.dateTimePicker_Manufacture = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_Expiration = new System.Windows.Forms.DateTimePicker();
             this.textBox_ProductName = new System.Windows.Forms.TextBox();
@@ -46,18 +47,16 @@
             this.button_Add = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
             this.button_Update = new System.Windows.Forms.Button();
-            this.label_NameError = new System.Windows.Forms.Label();
-            this.label_WeightError = new System.Windows.Forms.Label();
-            this.label_CountryError = new System.Windows.Forms.Label();
-            this.label_StockError = new System.Windows.Forms.Label();
             this.dataGridView_Products = new System.Windows.Forms.DataGridView();
             this.button_Clear = new System.Windows.Forms.Button();
             this.textBox_Price = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label_PriceError = new System.Windows.Forms.Label();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TextboxErrors = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button_ExportToXml = new System.Windows.Forms.Button();
+            this.button_SaveChanges = new System.Windows.Forms.Button();
+            this.button_CancelChanges = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Products)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextboxErrors)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker_Manufacture
@@ -242,52 +241,6 @@
             this.button_Update.UseVisualStyleBackColor = false;
             this.button_Update.Click += new System.EventHandler(this.button_Update_Click);
             // 
-            // label_NameError
-            // 
-            this.label_NameError.AutoSize = true;
-            this.label_NameError.BackColor = System.Drawing.Color.Transparent;
-            this.label_NameError.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_NameError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label_NameError.Location = new System.Drawing.Point(12, 110);
-            this.label_NameError.Name = "label_NameError";
-            this.label_NameError.Size = new System.Drawing.Size(0, 22);
-            this.label_NameError.TabIndex = 16;
-            // 
-            // label_WeightError
-            // 
-            this.label_WeightError.AutoSize = true;
-            this.label_WeightError.BackColor = System.Drawing.Color.Transparent;
-            this.label_WeightError.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_WeightError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label_WeightError.Location = new System.Drawing.Point(246, 110);
-            this.label_WeightError.Name = "label_WeightError";
-            this.label_WeightError.Size = new System.Drawing.Size(0, 22);
-            this.label_WeightError.TabIndex = 17;
-            // 
-            // label_CountryError
-            // 
-            this.label_CountryError.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label_CountryError.AutoSize = true;
-            this.label_CountryError.BackColor = System.Drawing.Color.Transparent;
-            this.label_CountryError.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_CountryError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label_CountryError.Location = new System.Drawing.Point(542, 110);
-            this.label_CountryError.Name = "label_CountryError";
-            this.label_CountryError.Size = new System.Drawing.Size(0, 22);
-            this.label_CountryError.TabIndex = 18;
-            // 
-            // label_StockError
-            // 
-            this.label_StockError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_StockError.AutoSize = true;
-            this.label_StockError.BackColor = System.Drawing.Color.Transparent;
-            this.label_StockError.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_StockError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label_StockError.Location = new System.Drawing.Point(807, 110);
-            this.label_StockError.Name = "label_StockError";
-            this.label_StockError.Size = new System.Drawing.Size(0, 22);
-            this.label_StockError.TabIndex = 19;
-            // 
             // dataGridView_Products
             // 
             this.dataGridView_Products.AllowUserToAddRows = false;
@@ -296,23 +249,23 @@
             this.dataGridView_Products.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_Products.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView_Products.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Products.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Products.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_Products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Yu Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_Products.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Yu Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Products.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_Products.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView_Products.Location = new System.Drawing.Point(206, 394);
             this.dataGridView_Products.MaximumSize = new System.Drawing.Size(950, 800);
@@ -322,7 +275,7 @@
             this.dataGridView_Products.RowTemplate.ReadOnly = true;
             this.dataGridView_Products.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_Products.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_Products.Size = new System.Drawing.Size(833, 240);
+            this.dataGridView_Products.Size = new System.Drawing.Size(892, 240);
             this.dataGridView_Products.TabIndex = 20;
             this.dataGridView_Products.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Products_CellClick);
             // 
@@ -365,21 +318,63 @@
             this.label7.TabIndex = 22;
             this.label7.Text = "Price";
             // 
-            // label_PriceError
+            // TextboxErrors
             // 
-            this.label_PriceError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_PriceError.AutoSize = true;
-            this.label_PriceError.BackColor = System.Drawing.Color.Transparent;
-            this.label_PriceError.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PriceError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label_PriceError.Location = new System.Drawing.Point(1026, 110);
-            this.label_PriceError.Name = "label_PriceError";
-            this.label_PriceError.Size = new System.Drawing.Size(0, 22);
-            this.label_PriceError.TabIndex = 24;
+            this.TextboxErrors.BlinkRate = 1;
+            this.TextboxErrors.ContainerControl = this;
+            this.TextboxErrors.Icon = ((System.Drawing.Icon)(resources.GetObject("TextboxErrors.Icon")));
             // 
-            // errorProvider
+            // button_ExportToXml
             // 
-            this.errorProvider.ContainerControl = this;
+            this.button_ExportToXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_ExportToXml.BackColor = System.Drawing.Color.Transparent;
+            this.button_ExportToXml.FlatAppearance.BorderSize = 0;
+            this.button_ExportToXml.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_ExportToXml.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 16F);
+            this.button_ExportToXml.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button_ExportToXml.Location = new System.Drawing.Point(940, 650);
+            this.button_ExportToXml.Name = "button_ExportToXml";
+            this.button_ExportToXml.Size = new System.Drawing.Size(297, 47);
+            this.button_ExportToXml.TabIndex = 25;
+            this.button_ExportToXml.Text = "Export products to XML";
+            this.button_ExportToXml.UseVisualStyleBackColor = false;
+            this.button_ExportToXml.Click += new System.EventHandler(this.button_ExportToXml_Click);
+            // 
+            // button_SaveChanges
+            // 
+            this.button_SaveChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_SaveChanges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_SaveChanges.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_SaveChanges.FlatAppearance.BorderSize = 0;
+            this.button_SaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_SaveChanges.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_SaveChanges.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button_SaveChanges.Location = new System.Drawing.Point(510, 650);
+            this.button_SaveChanges.MaximumSize = new System.Drawing.Size(234, 40);
+            this.button_SaveChanges.Name = "button_SaveChanges";
+            this.button_SaveChanges.Size = new System.Drawing.Size(187, 40);
+            this.button_SaveChanges.TabIndex = 26;
+            this.button_SaveChanges.Text = "Save Changes";
+            this.button_SaveChanges.UseVisualStyleBackColor = false;
+            this.button_SaveChanges.Click += new System.EventHandler(this.button_SaveChanges_Click);
+            // 
+            // button_CancelChanges
+            // 
+            this.button_CancelChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_CancelChanges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_CancelChanges.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_CancelChanges.FlatAppearance.BorderSize = 0;
+            this.button_CancelChanges.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_CancelChanges.Font = new System.Drawing.Font("Tw Cen MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_CancelChanges.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button_CancelChanges.Location = new System.Drawing.Point(723, 650);
+            this.button_CancelChanges.MaximumSize = new System.Drawing.Size(234, 40);
+            this.button_CancelChanges.Name = "button_CancelChanges";
+            this.button_CancelChanges.Size = new System.Drawing.Size(211, 40);
+            this.button_CancelChanges.TabIndex = 27;
+            this.button_CancelChanges.Text = "Cancel Changes";
+            this.button_CancelChanges.UseVisualStyleBackColor = false;
+            this.button_CancelChanges.Click += new System.EventHandler(this.button_CancelChanges_Click);
             // 
             // products
             // 
@@ -388,15 +383,13 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1240, 709);
-            this.Controls.Add(this.label_PriceError);
+            this.Controls.Add(this.button_CancelChanges);
+            this.Controls.Add(this.button_SaveChanges);
+            this.Controls.Add(this.button_ExportToXml);
             this.Controls.Add(this.textBox_Price);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button_Clear);
             this.Controls.Add(this.dataGridView_Products);
-            this.Controls.Add(this.label_StockError);
-            this.Controls.Add(this.label_CountryError);
-            this.Controls.Add(this.label_WeightError);
-            this.Controls.Add(this.label_NameError);
             this.Controls.Add(this.button_Update);
             this.Controls.Add(this.button_Delete);
             this.Controls.Add(this.button_Add);
@@ -416,7 +409,7 @@
             this.Text = "products";
             this.Load += new System.EventHandler(this.products_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Products)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextboxErrors)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,15 +431,13 @@
         private System.Windows.Forms.Button button_Add;
         private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.Button button_Update;
-        private System.Windows.Forms.Label label_NameError;
-        private System.Windows.Forms.Label label_WeightError;
-        private System.Windows.Forms.Label label_CountryError;
-        private System.Windows.Forms.Label label_StockError;
         private System.Windows.Forms.DataGridView dataGridView_Products;
         private System.Windows.Forms.Button button_Clear;
         private System.Windows.Forms.TextBox textBox_Price;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label_PriceError;
-        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ErrorProvider TextboxErrors;
+        private System.Windows.Forms.Button button_ExportToXml;
+        private System.Windows.Forms.Button button_CancelChanges;
+        private System.Windows.Forms.Button button_SaveChanges;
     }
 }

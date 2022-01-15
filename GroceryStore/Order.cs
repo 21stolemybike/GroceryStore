@@ -19,9 +19,10 @@ namespace GroceryStore
         {
             InitializeComponent();
             form = this;
+            
         }
 
-        int orderSaved = 0,CurrentQuantity=0;
+        int orderSaved = 0;
        
         private void Order_Load(object sender, EventArgs e)
         {
@@ -88,7 +89,7 @@ namespace GroceryStore
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged; //Attach event
         }
 
-        private int VerifyStock(int n) //Verify if the current stock can supply quantity needds 
+        private int VerifyStock(int n) //Verify if the current stock can supply quantity needs
         {
             SqlCommand cmd = new SqlCommand("VerifiyStock", Global.con);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -107,7 +108,6 @@ namespace GroceryStore
              return 0; 
             else
                 return 1;
-            
         }
        
         private void StockLabelChange() //Change stock label value
@@ -134,8 +134,6 @@ namespace GroceryStore
                 obj = cmd.ExecuteScalar(); 
                 int currentQuantity = Convert.ToInt32(obj);
                 label_Stock.Text = "Stock: " + (TotalStock - currentQuantity);
-                CurrentQuantity = TotalStock - currentQuantity;
-                
             }
             
             Global.con.Close();
@@ -164,6 +162,7 @@ namespace GroceryStore
             Global.da.Fill(Global.ds);
             dataGridView_Products.DataSource = Global.ds.Tables[0];
             Global.con.Close();
+            
         }
 
         private void OrdersGridViewRefresh() //Refresh orders datagridview
@@ -279,7 +278,14 @@ namespace GroceryStore
             textBox_Quantity.Text = "";
             label_QuantityError.Text = "";
         }
-       
+
+        private void dataGridView_Products_CellClick(object sender, DataGridViewCellEventArgs e) //Change comboBox value on cellClick
+        {
+            int selectedrowindex = dataGridView_Products.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dataGridView_Products.Rows[selectedrowindex];
+            comboBox1.SelectedIndex = comboBox1.FindStringExact(Convert.ToString(selectedRow.Cells["Product Name"].Value));
+        }
+
         #region "Detele product from order" 
 
         private void TotalValueRefresh()
@@ -294,7 +300,7 @@ namespace GroceryStore
 
         private void button_DeleteFromOrder_Click(object sender, EventArgs e) //Delete product from order
         {
-            if (dataGridView_Products.SelectedRows.Count == 0)
+            if (dataGridView_Orders.SelectedRows.Count == 0)
             {
                 label_DeleteFromOrderError.Text = "You need to select a product first!"; return;
             }
@@ -315,13 +321,17 @@ namespace GroceryStore
             TotalValueRefresh();
         }
 
-       
         #endregion
 
         #region "Save order"        
 
         private void button_SaveOrder_Click(object sender, EventArgs e) //Save Order
         {
+            if (dataGridView_Orders.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No products to save","",MessageBoxButtons.OK); return;
+            }
+            
             Global.con.Open();
             foreach(DataGridViewRow row in dataGridView_Orders.Rows)
             {

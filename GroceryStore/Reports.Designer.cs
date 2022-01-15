@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label_TotalValue = new System.Windows.Forms.Label();
@@ -36,12 +37,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView_Products = new System.Windows.Forms.DataGridView();
             this.label_TotalMoney = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox_Account = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Products)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -139,18 +142,47 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.dataGridView_Products);
             this.groupBox2.Controls.Add(this.label_TotalMoney);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.comboBox_Account);
             this.groupBox2.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox2.Location = new System.Drawing.Point(58, 369);
+            this.groupBox2.Location = new System.Drawing.Point(58, 315);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1150, 240);
+            this.groupBox2.Size = new System.Drawing.Size(1150, 355);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Account Purchases";
+            // 
+            // dataGridView_Products
+            // 
+            this.dataGridView_Products.AllowUserToAddRows = false;
+            this.dataGridView_Products.AllowUserToDeleteRows = false;
+            this.dataGridView_Products.AllowUserToResizeColumns = false;
+            this.dataGridView_Products.AllowUserToResizeRows = false;
+            this.dataGridView_Products.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.dataGridView_Products.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView_Products.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView_Products.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dataGridView_Products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Products.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView_Products.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView_Products.Location = new System.Drawing.Point(402, 171);
+            this.dataGridView_Products.Name = "dataGridView_Products";
+            this.dataGridView_Products.ReadOnly = true;
+            this.dataGridView_Products.RowHeadersVisible = false;
+            this.dataGridView_Products.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_Products.Size = new System.Drawing.Size(364, 150);
+            this.dataGridView_Products.TabIndex = 9;
             // 
             // label_TotalMoney
             // 
@@ -159,7 +191,7 @@
             this.label_TotalMoney.AutoSize = true;
             this.label_TotalMoney.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_TotalMoney.ForeColor = System.Drawing.Color.White;
-            this.label_TotalMoney.Location = new System.Drawing.Point(945, 107);
+            this.label_TotalMoney.Location = new System.Drawing.Point(945, 104);
             this.label_TotalMoney.Name = "label_TotalMoney";
             this.label_TotalMoney.Size = new System.Drawing.Size(64, 32);
             this.label_TotalMoney.TabIndex = 8;
@@ -171,11 +203,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(786, 106);
+            this.label6.Location = new System.Drawing.Point(770, 104);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(145, 32);
+            this.label6.Size = new System.Drawing.Size(169, 32);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Total Money:";
+            this.label6.Text = "Total Purchase:";
             // 
             // label8
             // 
@@ -217,6 +249,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Products)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -235,5 +268,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox_Account;
+        private System.Windows.Forms.DataGridView dataGridView_Products;
     }
 }

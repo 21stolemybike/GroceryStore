@@ -32,9 +32,36 @@ namespace GroceryStore
             //Account Purchases
             label6.Visible = false;
             label_TotalMoney.Visible = false;
+
+            StyleDataGrid();
         } //Load Form
 
-        
+        private void StyleDataGrid()
+        {
+            dataGridView_Products.BorderStyle = BorderStyle.None;
+            dataGridView_Products.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(64, 0, 0);
+            dataGridView_Products.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView_Products.BackgroundColor = Color.FromArgb(64, 0, 0);
+            dataGridView_Products.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
+            dataGridView_Products.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataGridView_Products.EnableHeadersVisualStyles = false;
+            dataGridView_Products.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView_Products.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
+            dataGridView_Products.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(64,0,0);
+            dataGridView_Products.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
+
+        private void DataGridRefresh(int n)
+        {
+            string sql = "select  A.product_name as 'Product Name', sum(B.quantity) as 'Total Quantity',sum(B.quantity*A.price) as 'Total Price' from orders as B inner join products as A on B.product_id = A.id where saved = 1 and account_id = "+n+" group by A.product_name";
+            //Global.con.Open();
+            Global.da = new SqlDataAdapter(sql, Global.con);
+            DataSet ds = new DataSet();
+            Global.da.Fill(ds);
+            dataGridView_Products.DataSource = ds.Tables[0];
+            //Global.con.Close();
+        } //Refresh account products grid view
+
         private void loadComboBoxAccounts() //Load accounts into comboBox 
         {
             comboBox_Account.SelectedIndexChanged -= comboBox_Account_SelectedIndexChanged; //Detach event
@@ -50,7 +77,6 @@ namespace GroceryStore
 
             comboBox_Account.SelectedIndexChanged += comboBox_Account_SelectedIndexChanged; //Attach event
         }
-        
         
         private void loadComboBoxProducts() //Load products into comboBox
         {
@@ -82,12 +108,24 @@ namespace GroceryStore
             Global.con.Open();
             cmd.ExecuteNonQuery();
             float Sum; int Quant;
-            Sum = Convert.ToSingle(outSum.Value);
+            
+            if (outSum.Value is DBNull)
+            {
+                label_Sold.Text = "0";label_TotalValue.Text = "0";
+                label2.Visible = true;
+                label_Sold.Visible = true;
+                label3.Visible = true;
+                label_TotalValue.Visible = true;
+                Global.con.Close(); return;
+            }
+            else
+                Sum = Convert.ToSingle(outSum.Value);
+            
             Quant = Convert.ToInt32(outQuant.Value);
             Global.con.Close();
             label_Sold.Text = Quant.ToString();
             label_TotalValue.Text = Sum.ToString();
-
+            
             label2.Visible = true;
             label_Sold.Visible = true;
             label3.Visible = true;
@@ -103,11 +141,11 @@ namespace GroceryStore
             cmd.Parameters.Add(outSum);
             Global.con.Open();
             cmd.ExecuteNonQuery ();
-            float Sum; 
-            Sum = Convert.ToSingle (outSum.Value);
+            float Sum;
+            Sum = Convert.ToSingle(outSum.Value);
             Global.con.Close();
             label_TotalMoney.Text = Sum.ToString();
-
+            DataGridRefresh(Convert.ToInt32(comboBox_Account.SelectedValue));
             label6.Visible = true;
             label_TotalMoney.Visible = true;
         } //Change account comboBox index

@@ -14,6 +14,7 @@ namespace GroceryStore
         public static SqlConnection con;
         public static SqlDataAdapter da;
         public static DataSet ds;
+        public static DataSet ProductsDataSet;
         public static SqlCommandBuilder cb;
 
         public static string CurrentId;

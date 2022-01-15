@@ -121,6 +121,9 @@
   <data name="blurred_supermarket_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blurred-supermarket-background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="JB-FE-Shop_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\JB-FE-Shop_10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_manage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-manage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,7 +133,7 @@
   <data name="loginlogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loginlogo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="JB-FE-Shop_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\JB-FE-Shop_10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
