@@ -1,6 +1,7 @@
 # GroceryStore
-  Grocery Store management desktop app 
-The app contains the following features: 
+ Grocery Store management desktop app.
+ 
+ The app contains the following features: 
 - Login/Register with admin and end user accounts 
 - Products tab where admin accounts can: 
    - Add/delete/update products 
